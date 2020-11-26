@@ -1,0 +1,164 @@
+/**Generate a java program to demonstrate the general structure of java language with its various data types.*/
+
+package com.hari.College_programs;
+
+import java.util.Scanner;
+
+public class Test1 {
+
+	public static void main(String args[]){
+		int n;
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter no. of elements you want in array:");
+        n = s.nextInt();
+
+        int a[] = new int[n];
+        System.out.println("Enter all the elements:");
+        for (int i = 0; i < n; i++) 
+        {
+            a[i] = s.nextInt();
+        }
+        System.out.print("Odd numbers:");
+        for(int i = 0 ; i < n ; i++)
+        {
+            if(a[i] % 2 != 0)
+            {
+                System.out.print(a[i]+" ");
+            }
+        }
+        System.out.println("");
+        System.out.print("Even numbers:");
+        for(int i = 0 ; i < n ; i++)
+        {
+            if(a[i] % 2 == 0)
+            {
+                System.out.print(a[i]+" ");
+            }
+        }
+	}
+
+}
+
+
+//Generate a java program to accept 5 subject marks through command line arguments, find the average and total of the mark. Display the result in various grades as follows.
+//Greater than 80 %
+//Outstanding
+//60 – 80
+//first class
+//50 – 60
+//second class
+//40 – 50
+//third class
+//less than 40
+//Fail.
+
+package com.hari.College_programs;
+
+import java.util.Scanner;
+
+public class Test2 {
+
+	public static void main(String[] args) {
+		int marks[] = new int[5];
+        int i;
+        float total=0, avg;
+        Scanner scanner = new Scanner(System.in);
+		
+        
+        for(i=0; i<5; i++) { 
+           System.out.print("Enter Marks of Subject"+(i+1)+":");
+           marks[i] = scanner.nextInt();
+           total = total + marks[i];
+        }
+        scanner.close();
+        //Calculating average here
+        avg = total/5;
+        System.out.println("total is: "+ total);
+        System.out.print("The student Grade is: ");
+        if(avg>=80)
+        {
+            System.out.print("Outstanding");
+        }
+        else if(avg>=60 && avg<80)
+        {
+           System.out.print("first class");
+        } 
+        else if(avg>=50 && avg<60)
+        {
+            System.out.print("second class");
+        }
+        else if(avg>=40 && avg<50)
+        {
+            System.out.print("third class");
+        }
+        else
+        {
+            System.out.print("Fail");
+        }
+
+	}
+
+}
+
+
+//Generate a java program to create one interface with all arithmetic operations and implement it to demonstrate Interface implementation.
+
+package com.hari.College_programs;
+
+import java.util.Scanner;
+
+interface A
+{
+   //public void AriOperation(int a, int b);
+   void add();  
+   void sub();  
+   void mul(); 
+}
+
+public class Test3 implements A 
+{
+
+	public static void main(String[] args) {
+		Test3 t = new Test3();
+		t.add();
+		t.sub();
+		t.mul();
+		
+	}
+
+	
+
+	@Override
+	public void add() {
+		Scanner kb = new Scanner(System.in);
+        System.out.println("Enter any two integer values to perform addition");
+        int a=kb.nextInt();
+        int b=kb.nextInt();
+        int s=a+b;
+        System.out.println("Sum of "+a+" and "+b+" is "+s);
+		
+	}
+
+	@Override
+	public void sub() {
+		Scanner kb = new Scanner(System.in);
+        System.out.println("Enter any two integer values to perform substraction");
+        int a=kb.nextInt();
+        int b=kb.nextInt();
+        int s=a-b;
+        System.out.println("Sum of "+a+" and "+b+" is "+s);
+		
+	}
+
+	@Override
+	public void mul() {
+		Scanner kb = new Scanner(System.in);
+        System.out.println("Enter any two integer values to perform multiplication");
+        int a=kb.nextInt();
+        int b=kb.nextInt();
+        int s=a*b;
+        System.out.println("Sum of "+a+" and "+b+" is "+s);
+		
+	}
+
+}
