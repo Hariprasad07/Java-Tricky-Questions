@@ -162,3 +162,78 @@ public class Test3 implements A
 	}
 
 }
+
+
+//Write a program to find fibonacci series
+=========================================
+
+public class MyClass
+{
+    public static void main(String args[])
+    {
+      int n = 10, f = 0, s = 1;
+    System.out.println("Fibonacci values" + n);
+
+    for (int i = 1; i <= n; ++i) {
+      System.out.print(f + ", ");
+
+      int r = f + s;
+      f = s;
+      s = r;
+       }
+    }
+}
+
+Fibonacci values10
+0, 1, 1, 2, 3, 5, 8, 13, 21, 34,
+
+//2nd way of Fibonacci Series program using while loop
+=====================================================
+public class MyClass {
+    public static void main(String args[]) {
+     int num1 = 8, num2 = 13;
+        
+        int i=5;
+        while(i<=20)
+        {
+            System.out.print(num1+" ");
+            int sumOfPrevTwo = num1 + num2;
+            num1 = num2;
+            num2 = sumOfPrevTwo;
+            i++;
+        }
+
+}
+}
+
+output: 8 13 21 34 55 89 144 233 377 610 987 1597 2584 4181 6765 10946 
+
+//3rd way of finding the fibonacci numbers between two numbers
+=============================================================
+public class MyClass {
+    public static void main(String args[]) {
+      int min = 5, max=50;
+    int n1 = 1, n2=1, aux=0;
+    while((aux=n1+n2) < min){
+        n1=n2;
+        n2=aux;
+    }
+    while( (aux=n1+n2) <= max){
+        System.out.print(aux+" ");
+        n1=n2;
+        n2=aux;
+    }
+}
+}
+
+
+output: 5 8 13 21 34
+
+
+
+
+
+
+
+
+
